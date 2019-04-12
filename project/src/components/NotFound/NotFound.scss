@@ -1,0 +1,42 @@
+@keyframes left-fighter-animation {
+  from {
+		transform: rotate(0deg);
+		transform: translateX(-350px);
+	}
+  to { 
+		transform: rotate(20deg) translateY(-50px);
+  }
+}
+
+@keyframes right-fighter-animation {
+  from {
+		transform: translate(450px, 50px);
+	}
+  to {
+		transform: rotate(10deg) translate(100px, -25px);
+  }
+}
+.fighters {
+	display: flex;
+	justify-content: center;
+	min-height: 65vh;
+}
+
+.fighter {
+	display: inline-block;
+	position: absolute;
+	width: 200px;
+	height: 150px;
+	margin: 70px 0;
+}
+.left-fighter {
+	background-image: url(../../assets//vector.png);
+	background-position: 50% 20px;
+	animation: left-fighter-animation 5s ease infinite;
+}
+
+.right-fighter {
+	background-image: url(../../assets//vector.png);
+	background-position: 50% 150px;
+	animation: right-fighter-animation 5s ease infinite;
+}
