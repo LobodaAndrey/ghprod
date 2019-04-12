@@ -12,7 +12,7 @@ class CreateArticle extends Component {
 	}
 
 	handleChange = (e) => {
-		const bodytext = e.target.value.split('\n').join(`\n \t`)
+		const bodytext = e.target.value.split('\n').join("\n\n\n")
 		this.setState({
 			[e.target.id]: bodytext
 		})
@@ -21,8 +21,15 @@ class CreateArticle extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		this.props.createArtcile(this.state)
-		this.props.history.push('/')
+		const {title, content} = this.state
+		if (title.length < 4) {
+			alert("Введите корректный заголовoк")
+		} else if (content.length < 20) {
+			alert("Напишите чуть больше текста")
+		} else {
+			this.props.createArtcile(this.state)
+			this.props.history.push('/')
+		}
 	}
 
 	render() {

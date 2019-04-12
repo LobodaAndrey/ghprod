@@ -14,3 +14,9 @@
 		color: #fff;
 	}
 }
+
+@media (max-width: 800px) {
+	.signed-in-links {
+		margin: 0;
+	}
+}
